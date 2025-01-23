@@ -1,0 +1,2 @@
+lowpass freq filter on input
+>2Hz*2 sigma-dekta
