@@ -31,7 +31,17 @@
 
 /* Private define ------------------------------------------------------------*/
 /* USER CODE BEGIN PD */
-
+#define true 1
+#define false 0
+#define AUTO_MODE 0
+#define MANUAL_MODE 1
+//assert by me - if something goes incredibly wrong - i would see it
+#define assert_(expr, error_code) do { \
+    if (!(expr)) { \
+        ERROR_VALUE = error_code; \
+        Error_Handler(); \
+    } \
+} while (0)
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -47,7 +57,8 @@ TIM_HandleTypeDef htim17;
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-
+uint8_t MODE = AUTO_MODE;
+uint8_t ERROR_VALUE = 0; //this is my error counter aka checker. if something goes really bad i would see exactly what. in other file there is list of all errors
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -98,6 +109,7 @@ int main(void)
   MX_TIM17_Init();
   MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
+  HAL_TIM_Base_Start_IT(&htim17);
 
   /* USER CODE END 2 */
 
@@ -267,7 +279,7 @@ static void MX_USART1_UART_Init(void)
   huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
   huart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
   huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_UART_Init(&huart1) != HAL_OK)
+  if (HAL_HalfDuplex_Init(&huart1) != HAL_OK)
   {
     Error_Handler();
   }
@@ -322,7 +334,70 @@ static void MX_GPIO_Init(void)
 }
 
 /* USER CODE BEGIN 4 */
+//====================================================================================================================================================================
+//====================================================================================================================================================================
+//====================================================================================================================================================================
 
+void MODE_CHECK() //checking auto or hold/manual mode enabled
+{
+	//if MODE pin on PCB is disconnected => auto mode
+	//if MODE pin on PCB is jumped/connected to 3.3 => manual mode
+	MODE = HAL_GPIO_ReadPin(MODE_SELECT_GPIO_Port, MODE_SELECT_Pin);
+	assert_((MODE==1 || MODE==0), 1);
+}
+
+void ANALOG_TO_DIGITAL() //1bit comparator is just 1bit ADC so fr im converting 1s and 0s to 1s and 0s
+{
+	uart_tx[0] = 0x5A;
+	uart_tx[1] = 0x05;
+	uart_tx[2] = 0x07;
+	uart_tx[3] = 0x00;
+	uart_tx[4] = (uart_tx[0] + uart_tx[1] + uart_tx[2] + uart_tx[3]) % 0x100;
+	HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
+	HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
+}
+
+void SEND_VIA_UART() //send analog output via uart tx
+{
+	uart_tx[0] = 0x5A;
+	uart_tx[1] = 0x05;
+	uart_tx[2] = 0x07;
+	uart_tx[3] = 0x00;
+	uart_tx[4] = (uart_tx[0] + uart_tx[1] + uart_tx[2] + uart_tx[3]) % 0x100;
+	HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
+	HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
+}
+
+void DAC_ENTRY_GENERATION() //first step of making analog signal for op amp
+{
+	uart_tx[0] = 0x5A;
+	uart_tx[1] = 0x05;
+	uart_tx[2] = 0x07;
+	uart_tx[3] = 0x00;
+	uart_tx[4] = (uart_tx[0] + uart_tx[1] + uart_tx[2] + uart_tx[3]) % 0x100;
+	HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
+	HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
+}
+
+
+
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+{
+	  if(htim->Instance == TIM17) //execute every something of time
+	  {
+		  MODE_CHECK();
+		  ANALOG_TO_DIGITAL();
+		  SEND_VIA_UART();
+		  DAC_ENTRY_GENERATION();
+
+		  assert_(ERROR_VALUE==0, 255); //what the heck? good luck me!
+	  }
+}
+
+
+//====================================================================================================================================================================
+//====================================================================================================================================================================
+//====================================================================================================================================================================
 /* USER CODE END 4 */
 
 /**
@@ -332,6 +407,8 @@ static void MX_GPIO_Init(void)
 void Error_Handler(void)
 {
   /* USER CODE BEGIN Error_Handler_Debug */
+																																//TODO user output of error in uart?
+
   /* User can add his own implementation to report the HAL error return state */
   __disable_irq();
   while (1)

@@ -1,0 +1,4 @@
+ERROR CODES:
+
+1. MODE_CHECK func failed, GPIO is configured in a wrong way
+2.

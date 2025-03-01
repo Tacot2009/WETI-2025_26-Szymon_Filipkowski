@@ -65,6 +65,8 @@ void Error_Handler(void);
 #define DIGITAL_INPUT_GPIO_Port GPIOA
 #define MODE_SELECT_Pin GPIO_PIN_2
 #define MODE_SELECT_GPIO_Port GPIOA
+#define USART1_RX__Pin GPIO_PIN_7
+#define USART1_RX__GPIO_Port GPIOB
 
 /* USER CODE BEGIN Private defines */
 
