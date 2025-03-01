@@ -286,11 +286,11 @@ static void MX_GPIO_Init(void)
 //====================================================================================================================================================================
 //====================================================================================================================================================================
 /*	//TODO things
- * try to do digital read on EXTI???
 deep sleep/light sleep cpu?
 err show in console via uart?
 
 //OTHER INFO
+duty cycle 50% for 0V
 
 */
 uint8_t ANALOG_TO_DIGITAL() //conversion from sigma delta hardware output to digital data

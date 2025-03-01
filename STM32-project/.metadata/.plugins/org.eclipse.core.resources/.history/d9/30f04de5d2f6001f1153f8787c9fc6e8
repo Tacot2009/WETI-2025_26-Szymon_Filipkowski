@@ -44,7 +44,7 @@ sigma delta adc code main file
 
 //ADC settings
 #define MAX_TICKS 255
-#define MAGIC_VOLTAGE_MULTIPLIER 1 //high state / low state * MAGIC_VOLTAGE_MULTIPLIER = voltage //TODO maybe proporcja NA PEWNO TO ADJUST / cos innego wymyslic
+#define MAGIC_VOLTAGE_MULTIPLIER 255 //high state / low state * MAGIC_VOLTAGE_MULTIPLIER = voltage //TODO maybe proporcja to adjust
 #define STATIC_VOLTAGE_MULTIPLIER 1 //static, every time used multiplier to multiply voltage by, beacuse of hardware issues
 #define VOLTAGE_OFFSET 1  //static, every time used voltage offset to add, beacuse of hardware issues
 /* USER CODE END PD */
@@ -286,11 +286,9 @@ static void MX_GPIO_Init(void)
 //====================================================================================================================================================================
 //====================================================================================================================================================================
 /*	//TODO things
- * try to do digital read on EXTI???
 deep sleep/light sleep cpu?
 err show in console via uart?
 
-//OTHER INFO
 
 */
 uint8_t ANALOG_TO_DIGITAL() //conversion from sigma delta hardware output to digital data
