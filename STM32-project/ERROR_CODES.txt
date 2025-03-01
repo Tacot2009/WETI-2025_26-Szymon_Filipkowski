@@ -2,3 +2,6 @@ ERROR CODES:
 
 1. MODE_CHECK func failed, GPIO is configured in a wrong way
 2.
+
+254. it should work...
+255. what the heck???

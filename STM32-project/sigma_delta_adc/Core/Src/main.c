@@ -59,6 +59,7 @@ UART_HandleTypeDef huart1;
 /* USER CODE BEGIN PV */
 uint8_t MODE = AUTO_MODE;
 uint8_t ERROR_VALUE = 0; //this is my error counter aka checker. if something goes really bad i would see exactly what. in other file there is list of all errors
+uint8_t VOLTAGE = 128; //real voltage = VOLTAGE / 100
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -325,8 +326,8 @@ static void MX_GPIO_Init(void)
 
   /*Configure GPIO pin : MODE_SELECT_Pin */
   GPIO_InitStruct.Pin = MODE_SELECT_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_INPUT;
-  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(MODE_SELECT_GPIO_Port, &GPIO_InitStruct);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
@@ -337,7 +338,6 @@ static void MX_GPIO_Init(void)
 //====================================================================================================================================================================
 //====================================================================================================================================================================
 //====================================================================================================================================================================
-
 void MODE_CHECK() //checking auto or hold/manual mode enabled
 {
 	//if MODE pin on PCB is disconnected => auto mode
@@ -346,7 +346,7 @@ void MODE_CHECK() //checking auto or hold/manual mode enabled
 	assert_((MODE==1 || MODE==0), 1);
 }
 
-void ANALOG_TO_DIGITAL() //1bit comparator is just 1bit ADC so fr im converting 1s and 0s to 1s and 0s
+void ANALOG_TO_DIGITAL()
 {
 	uart_tx[0] = 0x5A;
 	uart_tx[1] = 0x05;
@@ -368,29 +368,26 @@ void SEND_VIA_UART() //send analog output via uart tx
 	HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
 }
 
-void DAC_ENTRY_GENERATION() //first step of making analog signal for op amp
+
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) //mode selection pin based interrupt
 {
-	uart_tx[0] = 0x5A;
-	uart_tx[1] = 0x05;
-	uart_tx[2] = 0x07;
-	uart_tx[3] = 0x00;
-	uart_tx[4] = (uart_tx[0] + uart_tx[1] + uart_tx[2] + uart_tx[3]) % 0x100;
-	HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
-	HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
+    if(GPIO_Pin == MODE_SELECT_Pin) //MODE_SELECT input state changed
+    {
+    	MODE_CHECK();
+
+    	assert_(ERROR_VALUE==0, 254); //what the heck? good luck me!
+    }
 }
 
-
-
-void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
+void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //time based interrupts
 {
 	  if(htim->Instance == TIM17) //execute every something of time
 	  {
 		  MODE_CHECK();
 		  ANALOG_TO_DIGITAL();
 		  SEND_VIA_UART();
-		  DAC_ENTRY_GENERATION();
 
-		  assert_(ERROR_VALUE==0, 255); //what the heck? good luck me!
+		  assert_(ERROR_VALUE==0, 255); //what the heck? good luck me again!
 	  }
 }
 
