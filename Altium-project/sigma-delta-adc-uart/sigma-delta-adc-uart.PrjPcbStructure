@@ -1,7 +1,2 @@
-Record=TopLevelDocument|FileName=main.SchDoc|SheetNumber=1
-Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=COMPARATOR|SchDesignator=COMPARATOR|FileName=comparator.SchDoc|SheetNumber=7|SymbolType=Normal|RawFileName=comparator.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=DOUBLE OP AMP|SchDesignator=DOUBLE OP AMP|FileName=op-amp.SchDoc|SheetNumber=6|SymbolType=Normal|RawFileName=op-amp.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=I/O DEVICES|SchDesignator=I/O DEVICES|FileName=io-devices.SchDoc|SheetNumber=5|SymbolType=Normal|RawFileName=io-devices.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=INTEGRATER|SchDesignator=INTEGRATER|FileName=integrater.SchDoc|SheetNumber=4|SymbolType=Normal|RawFileName=integrater.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=LOW PASS FILTER|SchDesignator=LOW PASS FILTER|FileName=low-pass-fitler.SchDoc|SheetNumber=3|SymbolType=Normal|RawFileName=low-pass-fitler.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
-Record=SheetSymbol|SourceDocument=main.SchDoc|Designator=MCU|SchDesignator=MCU|FileName=MCU.SchDoc|SheetNumber=2|SymbolType=Normal|RawFileName=MCU.SchDoc|DesignItemId= |SourceLibraryName= |ObjectKind=Sheet Symbol|RevisionGUID= |ItemGUID= |VaultGUID= 
+Record=TopLevelDocument|FileName=adc.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=adc.SchDoc|FileName=main.SchDoc|SheetNumber=1

@@ -1,8 +1,0 @@
-lowpass freq filter on input
->2Hz*2 sigma-dekta
-
-proc:
--1 input ustawianie co i jak
--1 input szybkie
--1 DAC -> filtr lowpass z PWMa
--1x UART do usb 
