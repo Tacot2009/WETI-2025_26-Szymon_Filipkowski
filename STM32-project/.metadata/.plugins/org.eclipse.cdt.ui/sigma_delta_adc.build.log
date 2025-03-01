@@ -1,42 +1,17 @@
-17:11:38 **** Build of configuration Debug for project sigma_delta_adc ****
+19:25:45 **** Incremental Build of configuration Debug for project sigma_delta_adc ****
 make -j16 all 
 arm-none-eabi-gcc "../Core/Src/main.c" -mcpu=cortex-m0plus -std=gnu11 -g3 -DDEBUG -DUSE_HAL_DRIVER -DSTM32C011xx -c -I../Core/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc -I../Drivers/STM32C0xx_HAL_Driver/Inc/Legacy -I../Drivers/CMSIS/Device/ST/STM32C0xx/Include -I../Drivers/CMSIS/Include -O0 -ffunction-sections -fdata-sections -Wall -fstack-usage -fcyclomatic-complexity -MMD -MP -MF"Core/Src/main.d" -MT"Core/Src/main.o" --specs=nano.specs -mfloat-abi=soft -mthumb -o "Core/Src/main.o"
-../Core/Src/main.c: In function 'ANALOG_TO_DIGITAL':
-../Core/Src/main.c:351:9: error: 'uart_tx' undeclared (first use in this function)
-  351 |         uart_tx[0] = 0x5A;
-      |         ^~~~~~~
-../Core/Src/main.c:351:9: note: each undeclared identifier is reported only once for each function it appears in
-../Core/Src/main.c:356:28: error: 'huart3' undeclared (first use in this function); did you mean 'huart1'?
-  356 |         HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
-      |                            ^~~~~~
-      |                            huart1
-../Core/Src/main.c:357:35: error: 'left_uart_rx' undeclared (first use in this function)
-  357 |         HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
-      |                                   ^~~~~~~~~~~~
-../Core/Src/main.c: In function 'SEND_VIA_UART':
-../Core/Src/main.c:362:9: error: 'uart_tx' undeclared (first use in this function)
-  362 |         uart_tx[0] = 0x5A;
-      |         ^~~~~~~
-../Core/Src/main.c:367:28: error: 'huart3' undeclared (first use in this function); did you mean 'huart1'?
-  367 |         HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
-      |                            ^~~~~~
-      |                            huart1
-../Core/Src/main.c:368:35: error: 'left_uart_rx' undeclared (first use in this function)
-  368 |         HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
-      |                                   ^~~~~~~~~~~~
-../Core/Src/main.c: In function 'DAC_ENTRY_GENERATION':
-../Core/Src/main.c:373:9: error: 'uart_tx' undeclared (first use in this function)
-  373 |         uart_tx[0] = 0x5A;
-      |         ^~~~~~~
-../Core/Src/main.c:378:28: error: 'huart3' undeclared (first use in this function); did you mean 'huart1'?
-  378 |         HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
-      |                            ^~~~~~
-      |                            huart1
-../Core/Src/main.c:379:35: error: 'left_uart_rx' undeclared (first use in this function)
-  379 |         HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
-      |                                   ^~~~~~~~~~~~
-make: *** [Core/Src/subdir.mk:34: Core/Src/main.o] Error 1
-"make -j16 all" terminated with exit code 2. Build might be incomplete.
+arm-none-eabi-gcc -o "sigma_delta_adc.elf" @"objects.list"   -mcpu=cortex-m0plus -T"D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\STM32C011F4UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="sigma_delta_adc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+Finished building target: sigma_delta_adc.elf
+ 
+arm-none-eabi-size  sigma_delta_adc.elf 
+arm-none-eabi-objdump -h -S sigma_delta_adc.elf  > "sigma_delta_adc.list"
+   text	   data	    bss	    dec	    hex	filename
+  15036	     16	   1880	  16932	   4224	sigma_delta_adc.elf
+Finished building: default.size.stdout
+ 
+Finished building: sigma_delta_adc.list
+ 
 
-17:11:38 Build Failed. 10 errors, 0 warnings. (took 607ms)
+19:25:45 Build Finished. 0 errors, 0 warnings. (took 351ms)
 

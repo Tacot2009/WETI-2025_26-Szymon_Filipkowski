@@ -49,8 +49,6 @@ extern "C" {
 
 /* USER CODE END EM */
 
-void HAL_TIM_MspPostInit(TIM_HandleTypeDef *htim);
-
 /* Exported functions prototypes ---------------------------------------------*/
 void Error_Handler(void);
 
@@ -59,12 +57,11 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define DAC_PWM_Pin GPIO_PIN_15
-#define DAC_PWM_GPIO_Port GPIOC
 #define DIGITAL_INPUT_Pin GPIO_PIN_1
 #define DIGITAL_INPUT_GPIO_Port GPIOA
 #define MODE_SELECT_Pin GPIO_PIN_2
 #define MODE_SELECT_GPIO_Port GPIOA
+#define MODE_SELECT_EXTI_IRQn EXTI2_3_IRQn
 #define USART1_RX__Pin GPIO_PIN_7
 #define USART1_RX__GPIO_Port GPIOB
 

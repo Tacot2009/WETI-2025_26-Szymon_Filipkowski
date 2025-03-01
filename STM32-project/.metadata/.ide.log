@@ -733,3 +733,247 @@
 2025-03-01 17:12:11,060 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
 2025-03-01 17:12:11,127 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
 2025-03-01 17:12:12,174 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 729634264 Bytes (1073741824)
+2025-03-01 18:47:35,898 [WARN] IP:2251 - GENERATE_FILEX_INIT_CODE not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,898 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_ENTRY_NAME not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,898 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_PRIORITY not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,898 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_STACK_SIZE not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,900 [WARN] IP:2251 - GENERATE_FILEX_INIT_CODE not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,901 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_ENTRY_NAME not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,901 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_PRIORITY not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,901 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_STACK_SIZE not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,957 [WARN] IP:2251 - GENERATE_FILEX_INIT_CODE not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,957 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_ENTRY_NAME not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,957 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_PRIORITY not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:35,957 [WARN] IP:2251 - FILEX_APPLICATION_THREAD_STACK_SIZE not found: check if there is a RefParameter without a condition.
+2025-03-01 18:47:38,837 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 823081088 Bytes (1073741824)
+2025-03-01 18:47:39,786 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 836582056 Bytes (1073741824)
+2025-03-01 18:47:40,464 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 889010856 Bytes (1073741824)
+2025-03-01 18:47:40,713 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-03-01 18:47:40,713 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-03-01 18:47:40,714 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 18:47:40,714 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 18:47:40,714 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-03-01 18:47:40,714 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DEBUG
+2025-03-01 18:47:40,714 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-03-01 18:47:40,714 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-03-01 18:47:40,714 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ProgramFiles\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-03-01 18:47:40,756 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp_save
+2025-03-01 18:47:40,895 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp
+2025-03-01 18:47:40,933 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp_save
+2025-03-01 18:47:41,036 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp
+2025-03-01 18:47:41,061 [WARN] IPConfigManager:98 - WARNING: Missing Config File for DEBUG ip!!
+2025-03-01 18:47:41,206 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp_save
+2025-03-01 18:47:41,291 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp
+2025-03-01 18:47:41,301 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c_save
+2025-03-01 18:47:41,438 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c
+2025-03-01 18:47:41,441 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h_save
+2025-03-01 18:47:41,482 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h
+2025-03-01 18:47:41,515 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c_save
+2025-03-01 18:47:41,598 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c
+2025-03-01 18:47:41,600 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp_save
+2025-03-01 18:47:41,635 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp
+2025-03-01 18:47:41,646 [INFO] CodeEngine:311 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h_save
+2025-03-01 18:47:41,694 [INFO] CodeEngine:335 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h
+2025-03-01 18:47:41,704 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_PClockConfig is not available in your config.xml file
+2025-03-01 18:47:41,704 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_interrupt_Time_SYSTICK_Config is not available in your config.xml file
+2025-03-01 18:47:41,706 [WARN] IPConfigManager:3618 - IP not found : TIM
+2025-03-01 18:47:41,706 [WARN] CodeGenerator:4152 - IP not found : null
+2025-03-01 18:47:41,715 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h_save
+2025-03-01 18:47:41,774 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h
+2025-03-01 18:47:41,783 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c_save
+2025-03-01 18:47:41,851 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c
+2025-03-01 18:47:42,022 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 77mS.
+2025-03-01 18:47:42,023 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-03-01 18:47:42,083 [INFO] ConfigFileManager:1579 - The Die is : DIE443
+2025-03-01 18:47:42,523 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 500mS.
+2025-03-01 18:47:42,524 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 18:47:42,525 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 18:48:40,688 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-03-01 18:48:53,550 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-03-01 18:48:55,646 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-03-01 18:49:07,644 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 892441696 Bytes (1073741824)
+2025-03-01 18:49:08,934 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 907121760 Bytes (1073741824)
+2025-03-01 18:49:10,103 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 958501984 Bytes (1073741824)
+2025-03-01 18:49:10,220 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-03-01 18:49:10,220 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-03-01 18:49:10,220 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 18:49:10,221 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 18:49:10,221 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-03-01 18:49:10,221 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DEBUG
+2025-03-01 18:49:10,221 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-03-01 18:49:10,221 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-03-01 18:49:10,221 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ProgramFiles\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-03-01 18:49:10,254 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp_save
+2025-03-01 18:49:10,293 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp
+2025-03-01 18:49:10,327 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp_save
+2025-03-01 18:49:10,367 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp
+2025-03-01 18:49:10,386 [WARN] IPConfigManager:98 - WARNING: Missing Config File for DEBUG ip!!
+2025-03-01 18:49:10,490 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp_save
+2025-03-01 18:49:10,526 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp
+2025-03-01 18:49:10,536 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c_save
+2025-03-01 18:49:10,567 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c
+2025-03-01 18:49:10,569 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h_save
+2025-03-01 18:49:10,600 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h
+2025-03-01 18:49:10,626 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c_save
+2025-03-01 18:49:10,665 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c
+2025-03-01 18:49:10,667 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp_save
+2025-03-01 18:49:10,691 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp
+2025-03-01 18:49:10,700 [INFO] CodeEngine:311 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h_save
+2025-03-01 18:49:10,745 [INFO] CodeEngine:335 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h
+2025-03-01 18:49:10,752 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_PClockConfig is not available in your config.xml file
+2025-03-01 18:49:10,752 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_interrupt_Time_SYSTICK_Config is not available in your config.xml file
+2025-03-01 18:49:10,754 [WARN] IPConfigManager:3618 - IP not found : TIM
+2025-03-01 18:49:10,754 [WARN] CodeGenerator:4152 - IP not found : null
+2025-03-01 18:49:10,761 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h_save
+2025-03-01 18:49:10,791 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h
+2025-03-01 18:49:10,799 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c_save
+2025-03-01 18:49:10,857 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c
+2025-03-01 18:49:10,972 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 53mS.
+2025-03-01 18:49:10,973 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-03-01 18:49:11,005 [INFO] ConfigFileManager:1579 - The Die is : DIE443
+2025-03-01 18:49:11,311 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 338mS.
+2025-03-01 18:49:11,312 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 18:49:11,312 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 19:35:50,618 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:35:51,430 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,2,27,629x1043,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-03-01 19:35:52,989 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:36:03,498 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 880299432 Bytes (1073741824)
+2025-03-01 19:36:04,487 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 893404584 Bytes (1073741824)
+2025-03-01 19:36:06,131 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 927485352 Bytes (1073741824)
+2025-03-01 19:36:06,408 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-03-01 19:36:06,408 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-03-01 19:36:06,409 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 19:36:06,409 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 19:36:06,409 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-03-01 19:36:06,409 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DEBUG
+2025-03-01 19:36:06,409 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-03-01 19:36:06,409 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-03-01 19:36:06,410 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ProgramFiles\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-03-01 19:36:06,446 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp_save
+2025-03-01 19:36:06,621 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp
+2025-03-01 19:36:06,657 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp_save
+2025-03-01 19:36:06,770 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp
+2025-03-01 19:36:06,802 [WARN] IPConfigManager:98 - WARNING: Missing Config File for DEBUG ip!!
+2025-03-01 19:36:06,984 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp_save
+2025-03-01 19:36:07,086 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp
+2025-03-01 19:36:07,100 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c_save
+2025-03-01 19:36:07,291 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c
+2025-03-01 19:36:07,299 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h_save
+2025-03-01 19:36:07,362 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h
+2025-03-01 19:36:07,406 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c_save
+2025-03-01 19:36:07,483 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c
+2025-03-01 19:36:07,485 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp_save
+2025-03-01 19:36:07,522 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp
+2025-03-01 19:36:07,532 [INFO] CodeEngine:311 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h_save
+2025-03-01 19:36:07,590 [INFO] CodeEngine:335 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h
+2025-03-01 19:36:07,603 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_PClockConfig is not available in your config.xml file
+2025-03-01 19:36:07,603 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_interrupt_Time_SYSTICK_Config is not available in your config.xml file
+2025-03-01 19:36:07,606 [WARN] IPConfigManager:3618 - IP not found : TIM
+2025-03-01 19:36:07,606 [WARN] CodeGenerator:4152 - IP not found : null
+2025-03-01 19:36:07,617 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h_save
+2025-03-01 19:36:07,682 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h
+2025-03-01 19:36:07,692 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c_save
+2025-03-01 19:36:07,759 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c
+2025-03-01 19:36:07,935 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 73mS.
+2025-03-01 19:36:07,936 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-03-01 19:36:08,007 [INFO] ConfigFileManager:1579 - The Die is : DIE443
+2025-03-01 19:36:08,411 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 475mS.
+2025-03-01 19:36:08,412 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 19:36:08,413 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 19:37:04,113 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:04,193 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:05,782 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:05,877 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:08,273 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:08,353 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:10,594 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:10,686 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:14,980 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:15,061 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 19:37:16,580 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 993201032 Bytes (1073741824)
+2025-03-01 19:37:17,932 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 695727280 Bytes (1073741824)
+2025-03-01 19:37:19,546 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 739811472 Bytes (1073741824)
+2025-03-01 19:37:19,621 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-03-01 19:37:19,621 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-03-01 19:37:19,621 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 19:37:19,621 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 19:37:19,621 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-03-01 19:37:19,622 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DEBUG
+2025-03-01 19:37:19,622 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-03-01 19:37:19,622 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-03-01 19:37:19,623 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ProgramFiles\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-03-01 19:37:19,657 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp_save
+2025-03-01 19:37:19,700 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp
+2025-03-01 19:37:19,722 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp_save
+2025-03-01 19:37:19,788 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp
+2025-03-01 19:37:19,809 [WARN] IPConfigManager:98 - WARNING: Missing Config File for DEBUG ip!!
+2025-03-01 19:37:19,916 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp_save
+2025-03-01 19:37:19,952 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp
+2025-03-01 19:37:19,963 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c_save
+2025-03-01 19:37:19,996 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c
+2025-03-01 19:37:19,998 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h_save
+2025-03-01 19:37:20,029 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h
+2025-03-01 19:37:20,057 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c_save
+2025-03-01 19:37:20,096 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c
+2025-03-01 19:37:20,098 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp_save
+2025-03-01 19:37:20,126 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp
+2025-03-01 19:37:20,134 [INFO] CodeEngine:311 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h_save
+2025-03-01 19:37:20,174 [INFO] CodeEngine:335 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h
+2025-03-01 19:37:20,182 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_PClockConfig is not available in your config.xml file
+2025-03-01 19:37:20,182 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_interrupt_Time_SYSTICK_Config is not available in your config.xml file
+2025-03-01 19:37:20,183 [WARN] IPConfigManager:3618 - IP not found : TIM
+2025-03-01 19:37:20,184 [WARN] CodeGenerator:4152 - IP not found : null
+2025-03-01 19:37:20,194 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h_save
+2025-03-01 19:37:20,223 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h
+2025-03-01 19:37:20,232 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c_save
+2025-03-01 19:37:20,287 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c
+2025-03-01 19:37:20,415 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 55mS.
+2025-03-01 19:37:20,416 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-03-01 19:37:20,450 [INFO] ConfigFileManager:1579 - The Die is : DIE443
+2025-03-01 19:37:20,791 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 375mS.
+2025-03-01 19:37:20,792 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 19:37:20,793 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.
+2025-03-01 20:02:30,541 [INFO] Gpio:277 - dependency for GPIO [DEBUG, USART1]
+2025-03-01 20:02:30,671 [INFO] NvicIntPanel:101 - NVIC parent = com.st.microxplorer.plugins.ip.nvic.MultiNvicIntPanel[,0,0,0x0,invalid,layout=javax.swing.BoxLayout,alignmentX=0.0,alignmentY=0.0,border=,flags=9,maximumSize=,minimumSize=,preferredSize=]
+2025-03-01 20:02:38,915 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 750344576 Bytes (1073741824)
+2025-03-01 20:02:40,448 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 763976064 Bytes (1073741824)
+2025-03-01 20:02:43,494 [INFO] UtilMem:75 - End SaveConfig() Used Memory: 880890240 Bytes (1073741824)
+2025-03-01 20:02:43,813 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: NVIC
+2025-03-01 20:02:43,813 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: USART
+2025-03-01 20:02:43,813 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: TIM1_8C0
+2025-03-01 20:02:43,813 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: SYS
+2025-03-01 20:02:43,813 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: DEBUG
+2025-03-01 20:02:43,813 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: GPIO
+2025-03-01 20:02:43,813 [INFO] BlockDiagram:2766 - set Specific Code input for plugin: RCC
+2025-03-01 20:02:43,814 [INFO] CodeGenerator:896 - code generatio: config db path: C:\ProgramFiles\ST\STM32CubeIDE_1.16.0\STM32CubeIDE\plugins\com.st.stm32cube.common.mx_6.13.0.202411220809\\db\
+2025-03-01 20:02:43,860 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp_save
+2025-03-01 20:02:44,028 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\license.tmp
+2025-03-01 20:02:44,067 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp_save
+2025-03-01 20:02:44,170 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\gpio.tmp
+2025-03-01 20:02:44,200 [WARN] IPConfigManager:98 - WARNING: Missing Config File for DEBUG ip!!
+2025-03-01 20:02:44,437 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp_save
+2025-03-01 20:02:44,511 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\cortex.tmp
+2025-03-01 20:02:44,523 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c_save
+2025-03-01 20:02:44,721 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_it.c
+2025-03-01 20:02:44,724 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h_save
+2025-03-01 20:02:44,771 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_it.h
+2025-03-01 20:02:44,825 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c_save
+2025-03-01 20:02:44,942 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\stm32c0xx_hal_msp.c
+2025-03-01 20:02:44,944 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp_save
+2025-03-01 20:02:44,984 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\MXTmpFiles\system.tmp
+2025-03-01 20:02:44,994 [INFO] CodeEngine:311 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h_save
+2025-03-01 20:02:45,052 [INFO] CodeEngine:335 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\stm32c0xx_hal_conf.h
+2025-03-01 20:02:45,063 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_PClockConfig is not available in your config.xml file
+2025-03-01 20:02:45,063 [WARN] IPConfigManager:3034 - Warning: the RefConfig RCC_interrupt_Time_SYSTICK_Config is not available in your config.xml file
+2025-03-01 20:02:45,065 [WARN] IPConfigManager:3618 - IP not found : TIM
+2025-03-01 20:02:45,066 [WARN] CodeGenerator:4152 - IP not found : null
+2025-03-01 20:02:45,074 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h_save
+2025-03-01 20:02:45,135 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Inc\main.h
+2025-03-01 20:02:45,144 [INFO] CodeEngine:255 - oldGeneratedFile, D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c_save
+2025-03-01 20:02:45,223 [INFO] CodeEngine:279 - Generated code: D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\Core\Src\main.c
+2025-03-01 20:02:45,368 [INFO] ProjectBuilder:3289 - Time for Copy HAL[1] : 60mS.
+2025-03-01 20:02:45,369 [INFO] ProjectBuilder:4876 - Project Generator version: 4.5.0-RC5
+2025-03-01 20:02:45,415 [INFO] ConfigFileManager:1579 - The Die is : DIE443
+2025-03-01 20:02:45,833 [INFO] ProjectBuilder:5154 - Time for Generating toolchain IDE Files: 464mS.
+2025-03-01 20:02:45,834 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 1mS.
+2025-03-01 20:02:45,835 [INFO] ProjectBuilder:3146 - Time for Copy CMSIS : 0mS.

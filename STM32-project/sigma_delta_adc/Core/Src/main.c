@@ -1,5 +1,11 @@
 /* USER CODE BEGIN Header */
 /**
+SIGMA DELTA ADC project
+by Szymon Filipkowski
+
+sigma delta adc code main file
+**/
+/**
   ******************************************************************************
   * @file           : main.c
   * @brief          : Main program body
@@ -33,15 +39,14 @@
 /* USER CODE BEGIN PD */
 #define true 1
 #define false 0
-#define AUTO_MODE 0
-#define MANUAL_MODE 1
-//assert by me - if something goes incredibly wrong - i would see it
-#define assert_(expr, error_code) do { \
-    if (!(expr)) { \
-        ERROR_VALUE = error_code; \
-        Error_Handler(); \
-    } \
-} while (0)
+#define HIGH 1
+#define LOW 0
+
+//ADC settings
+#define MAX_TICKS 255
+#define MAGIC_VOLTAGE_MULTIPLIER 255 //high state / low state * MAGIC_VOLTAGE_MULTIPLIER = voltage //TODO maybe proporcja to adjust
+#define STATIC_VOLTAGE_MULTIPLIER 1 //static, every time used multiplier to multiply voltage by, beacuse of hardware issues
+#define VOLTAGE_OFFSET 1  //static, every time used voltage offset to add, beacuse of hardware issues
 /* USER CODE END PD */
 
 /* Private macro -------------------------------------------------------------*/
@@ -51,15 +56,12 @@
 
 /* Private variables ---------------------------------------------------------*/
 
-TIM_HandleTypeDef htim3;
 TIM_HandleTypeDef htim17;
 
 UART_HandleTypeDef huart1;
 
 /* USER CODE BEGIN PV */
-uint8_t MODE = AUTO_MODE;
-uint8_t ERROR_VALUE = 0; //this is my error counter aka checker. if something goes really bad i would see exactly what. in other file there is list of all errors
-uint8_t VOLTAGE = 128; //real voltage = VOLTAGE / 100
+uint8_t VOLTAGE = 255; //real voltage = VOLTAGE / 100
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -67,9 +69,11 @@ void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
 static void MX_USART1_UART_Init(void);
 static void MX_TIM17_Init(void);
-static void MX_TIM3_Init(void);
 /* USER CODE BEGIN PFP */
-
+uint8_t ANALOG_TO_DIGITAL(void);
+void SEND_VIA_UART(uint8_t toSend);
+void MANUAL_MODE(void);
+void EXIT_DEEP_SLEEP_MODE(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -108,10 +112,9 @@ int main(void)
   MX_GPIO_Init();
   MX_USART1_UART_Init();
   MX_TIM17_Init();
-  MX_TIM3_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim17);
-
+  __HAL_RCC_PWR_CLK_ENABLE(); //TODO TO CHECK IF WORKS STOP MODE // https://www.youtube.com/watch?v=td_CbkFBCfE
   /* USER CODE END 2 */
 
   /* Infinite loop */
@@ -161,65 +164,6 @@ void SystemClock_Config(void)
   {
     Error_Handler();
   }
-}
-
-/**
-  * @brief TIM3 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_TIM3_Init(void)
-{
-
-  /* USER CODE BEGIN TIM3_Init 0 */
-
-  /* USER CODE END TIM3_Init 0 */
-
-  TIM_ClockConfigTypeDef sClockSourceConfig = {0};
-  TIM_MasterConfigTypeDef sMasterConfig = {0};
-  TIM_OC_InitTypeDef sConfigOC = {0};
-
-  /* USER CODE BEGIN TIM3_Init 1 */
-
-  /* USER CODE END TIM3_Init 1 */
-  htim3.Instance = TIM3;
-  htim3.Init.Prescaler = 46875;
-  htim3.Init.CounterMode = TIM_COUNTERMODE_UP;
-  htim3.Init.Period = 1024;
-  htim3.Init.ClockDivision = TIM_CLOCKDIVISION_DIV1;
-  htim3.Init.AutoReloadPreload = TIM_AUTORELOAD_PRELOAD_DISABLE;
-  if (HAL_TIM_Base_Init(&htim3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sClockSourceConfig.ClockSource = TIM_CLOCKSOURCE_INTERNAL;
-  if (HAL_TIM_ConfigClockSource(&htim3, &sClockSourceConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_TIM_PWM_Init(&htim3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sMasterConfig.MasterOutputTrigger = TIM_TRGO_RESET;
-  sMasterConfig.MasterSlaveMode = TIM_MASTERSLAVEMODE_DISABLE;
-  if (HAL_TIMEx_MasterConfigSynchronization(&htim3, &sMasterConfig) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  sConfigOC.OCMode = TIM_OCMODE_PWM1;
-  sConfigOC.Pulse = 0;
-  sConfigOC.OCPolarity = TIM_OCPOLARITY_HIGH;
-  sConfigOC.OCFastMode = TIM_OCFAST_DISABLE;
-  if (HAL_TIM_PWM_ConfigChannel(&htim3, &sConfigOC, TIM_CHANNEL_3) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN TIM3_Init 2 */
-
-  /* USER CODE END TIM3_Init 2 */
-  HAL_TIM_MspPostInit(&htim3);
-
 }
 
 /**
@@ -274,7 +218,7 @@ static void MX_USART1_UART_Init(void)
   huart1.Init.WordLength = UART_WORDLENGTH_8B;
   huart1.Init.StopBits = UART_STOPBITS_1;
   huart1.Init.Parity = UART_PARITY_NONE;
-  huart1.Init.Mode = UART_MODE_TX_RX;
+  huart1.Init.Mode = UART_MODE_TX;
   huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
   huart1.Init.OverSampling = UART_OVERSAMPLING_16;
   huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
@@ -314,7 +258,6 @@ static void MX_GPIO_Init(void)
 /* USER CODE END MX_GPIO_Init_1 */
 
   /* GPIO Ports Clock Enable */
-  __HAL_RCC_GPIOC_CLK_ENABLE();
   __HAL_RCC_GPIOA_CLK_ENABLE();
   __HAL_RCC_GPIOB_CLK_ENABLE();
 
@@ -330,6 +273,10 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(MODE_SELECT_GPIO_Port, &GPIO_InitStruct);
 
+  /* EXTI interrupt init*/
+  HAL_NVIC_SetPriority(EXTI2_3_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI2_3_IRQn);
+
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
 }
@@ -338,59 +285,109 @@ static void MX_GPIO_Init(void)
 //====================================================================================================================================================================
 //====================================================================================================================================================================
 //====================================================================================================================================================================
-void MODE_CHECK() //checking auto or hold/manual mode enabled
+/*	//TODO things
+deep sleep/light sleep cpu?
+err show in console via uart?
+
+
+*/
+uint8_t ANALOG_TO_DIGITAL() //conversion from sigma delta hardware output to digital data
 {
-	//if MODE pin on PCB is disconnected => auto mode
-	//if MODE pin on PCB is jumped/connected to 3.3 => manual mode
-	MODE = HAL_GPIO_ReadPin(MODE_SELECT_GPIO_Port, MODE_SELECT_Pin);
-	assert_((MODE==1 || MODE==0), 1);
+	static uint8_t was_high = false; //have i already been at the top of the func?
+	static uint8_t data = 0; //current state of function
+	static uint16_t ticks_high=0; //how many tick was i on high state
+	static uint16_t ticks_low=0; //how many tick was i on low state
+	static uint16_t ticks=0;
+
+	data = HAL_GPIO_ReadPin(DIGITAL_INPUT_GPIO_Port, DIGITAL_INPUT_Pin);
+
+	ticks = ticks + 1;
+
+	if((was_high == true && data == HIGH) || ticks >= MAX_TICKS) //back on high
+	{
+		VOLTAGE = ticks_high / ticks_low * MAGIC_VOLTAGE_MULTIPLIER;
+		SEND_VIA_UART(VOLTAGE * STATIC_VOLTAGE_MULTIPLIER + VOLTAGE_OFFSET);
+		//for new run
+		ticks = 1;
+		ticks_high = 1;
+		ticks_low = 0;
+		ticks = 1;
+		was_high=false;
+		return 1; //voltage analysis done
+	}
+	else if(data == HIGH) //first high
+	{
+		ticks_high = ticks_high + 1;
+	}
+	else //func went down
+	{
+		ticks_low = ticks_low + 1;
+		was_high = true;
+	}
+
+	return 0; //nothing
 }
 
-void ANALOG_TO_DIGITAL()
+void MANUAL_MODE()
 {
-	uart_tx[0] = 0x5A;
-	uart_tx[1] = 0x05;
-	uart_tx[2] = 0x07;
-	uart_tx[3] = 0x00;
-	uart_tx[4] = (uart_tx[0] + uart_tx[1] + uart_tx[2] + uart_tx[3]) % 0x100;
-	HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
-	HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
+	while(ANALOG_TO_DIGITAL() == 0); //do until done, one full check
+
+	//STOP MODE of mcu
+	HAL_SuspendTick();
+	HAL_PWR_EnterSTOPMode(PWR_MAINREGULATOR_ON, PWR_STOPENTRY_WFI); //TODO low power regulator?
 }
 
-void SEND_VIA_UART() //send analog output via uart tx
+void EXIT_DEEP_SLEEP_MODE()
 {
-	uart_tx[0] = 0x5A;
-	uart_tx[1] = 0x05;
-	uart_tx[2] = 0x07;
-	uart_tx[3] = 0x00;
-	uart_tx[4] = (uart_tx[0] + uart_tx[1] + uart_tx[2] + uart_tx[3]) % 0x100;
-	HAL_UART_Transmit(&huart3, uart_tx, 5, 100);
-	HAL_UART_Receive(&huart3, left_uart_rx, 9, 100);
+	HAL_ResumeTick();
+	SystemClock_Config();
+}
+
+void SEND_VIA_UART(uint8_t toSend) //send analog output via uart tx
+{
+	/*
+	 first bit header 0x59
+	 second bit voltage
+	 */
+
+
+	uint8_t uart_tx[2];
+
+	uart_tx[0] = 0x59;
+	uart_tx[1] = VOLTAGE;
+	//HAL_UART_Transmit(&huart1, uart_tx, 3, 100); //TODO check if works
+	HAL_UART_Transmit_IT(&huart1, uart_tx, 2);
 }
 
 
-void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin) //mode selection pin based interrupt
+//=======================================================INTERRUPTS===================================================================
+
+
+
+void HAL_GPIO_EXTI_Rising_Callback(uint16_t GPIO_Pin) //MODE pin was shorted with 3.3 => we are into manual mode
 {
-    if(GPIO_Pin == MODE_SELECT_Pin) //MODE_SELECT input state changed
+    if(GPIO_Pin == MODE_SELECT_Pin)
     {
-    	MODE_CHECK();
-
-    	assert_(ERROR_VALUE==0, 254); //what the heck? good luck me!
+    	MANUAL_MODE();
     }
 }
+
+void HAL_GPIO_EXTI_Falling_Callback(uint16_t GPIO_Pin) //MODE pin got release => we are going into auto mode
+{
+    if(GPIO_Pin == MODE_SELECT_Pin)
+    {
+    	EXIT_DEEP_SLEEP_MODE();
+    }
+}
+
 
 void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //time based interrupts
 {
 	  if(htim->Instance == TIM17) //execute every something of time
 	  {
-		  MODE_CHECK();
 		  ANALOG_TO_DIGITAL();
-		  SEND_VIA_UART();
-
-		  assert_(ERROR_VALUE==0, 255); //what the heck? good luck me again!
 	  }
 }
-
 
 //====================================================================================================================================================================
 //====================================================================================================================================================================
