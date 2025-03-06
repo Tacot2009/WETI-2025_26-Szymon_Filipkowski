@@ -1,0 +1,16 @@
+Removed Pin From Net: NetName=GND Pin=CON1-3
+Removed Pin From Net: NetName=3.3V Pin=CON1-4
+Removed Pin From Net: NetName=SWCLK Pin=PROG-1
+Removed Pin From Net: NetName=GND Pin=PROG-2
+Removed Pin From Net: NetName=SWDIO Pin=PROG-3
+Removed Pin From Net: NetName=RESET Pin=PROG-4
+Removed Member From Class: ClassName=main Member=PROG
+Change Component Footprint: Designator=CON1 Old Footprint=Goldpin 2.54MM 4P New Footprint=Goldpin 2.54mm 5P
+Change Component Comment : Designator=CON1 Old Comment=4 PIN New Comment=5 PIN
+Added Pin To Net: NetName=SWCLK Pin=CON1-1
+Added Pin To Net: NetName=SWDIO Pin=CON1-2
+Added Pin To Net: NetName=RESET Pin=CON1-3
+Added Pin To Net: NetName=GND Pin=CON1-4
+Added Pin To Net: NetName=3.3V Pin=CON1-5
+Added Room: Name=adc
+Added Room: Name=main

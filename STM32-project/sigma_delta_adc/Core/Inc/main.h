@@ -57,13 +57,11 @@ void Error_Handler(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define DIGITAL_INPUT_Pin GPIO_PIN_1
-#define DIGITAL_INPUT_GPIO_Port GPIOA
-#define MODE_SELECT_Pin GPIO_PIN_2
+#define MODE_SELECT_Pin GPIO_PIN_0
 #define MODE_SELECT_GPIO_Port GPIOA
-#define MODE_SELECT_EXTI_IRQn EXTI2_3_IRQn
-#define USART1_RX__Pin GPIO_PIN_7
-#define USART1_RX__GPIO_Port GPIOB
+#define MODE_SELECT_EXTI_IRQn EXTI0_1_IRQn
+#define DIGITAL_INPUT_Pin GPIO_PIN_5
+#define DIGITAL_INPUT_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

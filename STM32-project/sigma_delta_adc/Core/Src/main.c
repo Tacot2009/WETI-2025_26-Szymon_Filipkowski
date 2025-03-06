@@ -58,8 +58,6 @@ sigma delta adc code main file
 
 TIM_HandleTypeDef htim17;
 
-UART_HandleTypeDef huart1;
-
 /* USER CODE BEGIN PV */
 uint8_t VOLTAGE = 255; //real voltage = VOLTAGE / 100
 /* USER CODE END PV */
@@ -67,10 +65,9 @@ uint8_t VOLTAGE = 255; //real voltage = VOLTAGE / 100
 /* Private function prototypes -----------------------------------------------*/
 void SystemClock_Config(void);
 static void MX_GPIO_Init(void);
-static void MX_USART1_UART_Init(void);
 static void MX_TIM17_Init(void);
 /* USER CODE BEGIN PFP */
-uint8_t ANALOG_TO_DIGITAL(void);
+uint8_t ANALOG_TO_DIGITAL(uint8_t is_it_first);
 void SEND_VIA_UART(uint8_t toSend);
 void MANUAL_MODE(void);
 void EXIT_DEEP_SLEEP_MODE(void);
@@ -110,7 +107,6 @@ int main(void)
 
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
-  MX_USART1_UART_Init();
   MX_TIM17_Init();
   /* USER CODE BEGIN 2 */
   HAL_TIM_Base_Start_IT(&htim17);
@@ -199,54 +195,6 @@ static void MX_TIM17_Init(void)
 }
 
 /**
-  * @brief USART1 Initialization Function
-  * @param None
-  * @retval None
-  */
-static void MX_USART1_UART_Init(void)
-{
-
-  /* USER CODE BEGIN USART1_Init 0 */
-
-  /* USER CODE END USART1_Init 0 */
-
-  /* USER CODE BEGIN USART1_Init 1 */
-
-  /* USER CODE END USART1_Init 1 */
-  huart1.Instance = USART1;
-  huart1.Init.BaudRate = 115200;
-  huart1.Init.WordLength = UART_WORDLENGTH_8B;
-  huart1.Init.StopBits = UART_STOPBITS_1;
-  huart1.Init.Parity = UART_PARITY_NONE;
-  huart1.Init.Mode = UART_MODE_TX;
-  huart1.Init.HwFlowCtl = UART_HWCONTROL_NONE;
-  huart1.Init.OverSampling = UART_OVERSAMPLING_16;
-  huart1.Init.OneBitSampling = UART_ONE_BIT_SAMPLE_DISABLE;
-  huart1.Init.ClockPrescaler = UART_PRESCALER_DIV1;
-  huart1.AdvancedInit.AdvFeatureInit = UART_ADVFEATURE_NO_INIT;
-  if (HAL_HalfDuplex_Init(&huart1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetTxFifoThreshold(&huart1, UART_TXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_SetRxFifoThreshold(&huart1, UART_RXFIFO_THRESHOLD_1_8) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  if (HAL_UARTEx_DisableFifoMode(&huart1) != HAL_OK)
-  {
-    Error_Handler();
-  }
-  /* USER CODE BEGIN USART1_Init 2 */
-
-  /* USER CODE END USART1_Init 2 */
-
-}
-
-/**
   * @brief GPIO Initialization Function
   * @param None
   * @retval None
@@ -259,7 +207,12 @@ static void MX_GPIO_Init(void)
 
   /* GPIO Ports Clock Enable */
   __HAL_RCC_GPIOA_CLK_ENABLE();
-  __HAL_RCC_GPIOB_CLK_ENABLE();
+
+  /*Configure GPIO pin : MODE_SELECT_Pin */
+  GPIO_InitStruct.Pin = MODE_SELECT_Pin;
+  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
+  GPIO_InitStruct.Pull = GPIO_PULLDOWN;
+  HAL_GPIO_Init(MODE_SELECT_GPIO_Port, &GPIO_InitStruct);
 
   /*Configure GPIO pin : DIGITAL_INPUT_Pin */
   GPIO_InitStruct.Pin = DIGITAL_INPUT_Pin;
@@ -267,15 +220,9 @@ static void MX_GPIO_Init(void)
   GPIO_InitStruct.Pull = GPIO_NOPULL;
   HAL_GPIO_Init(DIGITAL_INPUT_GPIO_Port, &GPIO_InitStruct);
 
-  /*Configure GPIO pin : MODE_SELECT_Pin */
-  GPIO_InitStruct.Pin = MODE_SELECT_Pin;
-  GPIO_InitStruct.Mode = GPIO_MODE_IT_RISING_FALLING;
-  GPIO_InitStruct.Pull = GPIO_NOPULL;
-  HAL_GPIO_Init(MODE_SELECT_GPIO_Port, &GPIO_InitStruct);
-
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI2_3_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI2_3_IRQn);
+  HAL_NVIC_SetPriority(EXTI0_1_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI0_1_IRQn);
 
 /* USER CODE BEGIN MX_GPIO_Init_2 */
 /* USER CODE END MX_GPIO_Init_2 */
@@ -293,13 +240,22 @@ err show in console via uart?
 //OTHER INFO
 
 */
-uint8_t ANALOG_TO_DIGITAL() //conversion from sigma delta hardware output to digital data
+uint8_t ANALOG_TO_DIGITAL(uint8_t is_it_first) //conversion from sigma delta hardware output to digital data
 {
 	static uint8_t was_high = false; //have i already been at the top of the func?
 	static uint8_t data = 0; //current state of function
 	static uint16_t ticks_high=0; //how many tick was i on high state
 	static uint16_t ticks_low=0; //how many tick was i on low state
 	static uint16_t ticks=0;
+
+	if(is_it_first == true)
+	{
+		was_high = false; //have i already been at the top of the func?
+		data = 0; //current state of function
+		ticks_high=0; //how many tick was i on high state
+		ticks_low=0; //how many tick was i on low state
+		ticks=0;
+	}
 
 	data = HAL_GPIO_ReadPin(DIGITAL_INPUT_GPIO_Port, DIGITAL_INPUT_Pin);
 
@@ -310,7 +266,9 @@ uint8_t ANALOG_TO_DIGITAL() //conversion from sigma delta hardware output to dig
 		if(ticks_high >= MAX_TICKS) VOLTAGE = 255;
 		else if(ticks_low >= MAX_TICKS) VOLTAGE = 0;
 		else VOLTAGE = ticks_high / ticks_low * MAGIC_VOLTAGE_MULTIPLIER;
-		SEND_VIA_UART(VOLTAGE * STATIC_VOLTAGE_MULTIPLIER + VOLTAGE_OFFSET);
+
+		VOLTAGE = VOLTAGE * STATIC_VOLTAGE_MULTIPLIER + VOLTAGE_OFFSET; //final voltage calculation
+
 		//for new run
 		ticks = 1;
 		ticks_high = 1;
@@ -334,7 +292,10 @@ uint8_t ANALOG_TO_DIGITAL() //conversion from sigma delta hardware output to dig
 
 void MANUAL_MODE()
 {
-	while(ANALOG_TO_DIGITAL() == 0); //do until done, one full check
+	HAL_TIM_Base_Stop_IT(&htim17); //stops auto mode
+
+	ANALOG_TO_DIGITAL(true); //resets local vars from, auto mode
+	while(ANALOG_TO_DIGITAL(false) == 0); //do until done, one full check
 
 	//STOP MODE of mcu
 	HAL_SuspendTick();
@@ -345,24 +306,8 @@ void EXIT_DEEP_SLEEP_MODE()
 {
 	HAL_ResumeTick();
 	SystemClock_Config();
+	HAL_TIM_Base_Start_IT(&htim17); //resums auto mode
 }
-
-void SEND_VIA_UART(uint8_t toSend) //send analog output via uart tx
-{
-	/*
-	 first bit header 0x59
-	 second bit voltage
-	 */
-
-
-	uint8_t uart_tx[2];
-
-	uart_tx[0] = 0x59;
-	uart_tx[1] = VOLTAGE;
-	//HAL_UART_Transmit(&huart1, uart_tx, 3, 100); //TODO check if works
-	HAL_UART_Transmit_IT(&huart1, uart_tx, 2);
-}
-
 
 //=======================================================INTERRUPTS===================================================================
 
@@ -389,7 +334,7 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim) //time based interru
 {
 	  if(htim->Instance == TIM17) //execute every something of time
 	  {
-		  ANALOG_TO_DIGITAL();
+		  ANALOG_TO_DIGITAL(false);
 	  }
 }
 

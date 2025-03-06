@@ -60,8 +60,8 @@ all: main-build
 main-build: sigma_delta_adc.elf secondary-outputs
 
 # Tool invocations
-sigma_delta_adc.elf sigma_delta_adc.map: $(OBJS) $(USER_OBJS) D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\STM32C011F4UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
-	arm-none-eabi-gcc -o "sigma_delta_adc.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"D:\tech\konkursy\wygraj-eti-2025_26\STM32-project\sigma_delta_adc\STM32C011F4UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="sigma_delta_adc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
+sigma_delta_adc.elf sigma_delta_adc.map: $(OBJS) $(USER_OBJS) D:\tech\konkursy\WETI-2025_26-Szymon_Filipkowski-main\STM32-project\sigma_delta_adc\STM32C011F4UX_FLASH.ld makefile objects.list $(OPTIONAL_TOOL_DEPS)
+	arm-none-eabi-gcc -o "sigma_delta_adc.elf" @"objects.list" $(USER_OBJS) $(LIBS) -mcpu=cortex-m0plus -T"D:\tech\konkursy\WETI-2025_26-Szymon_Filipkowski-main\STM32-project\sigma_delta_adc\STM32C011F4UX_FLASH.ld" --specs=nosys.specs -Wl,-Map="sigma_delta_adc.map" -Wl,--gc-sections -static --specs=nano.specs -mfloat-abi=soft -mthumb -Wl,--start-group -lc -lm -Wl,--end-group
 	@echo 'Finished building target: $@'
 	@echo ' '
 

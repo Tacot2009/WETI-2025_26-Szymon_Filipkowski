@@ -56,7 +56,6 @@
 
 /* External variables --------------------------------------------------------*/
 extern TIM_HandleTypeDef htim17;
-extern UART_HandleTypeDef huart1;
 /* USER CODE BEGIN EV */
 
 /* USER CODE END EV */
@@ -142,17 +141,17 @@ void SysTick_Handler(void)
 /******************************************************************************/
 
 /**
-  * @brief This function handles EXTI line 2 and line 3 interrupts.
+  * @brief This function handles EXTI line 0 and line 1 interrupts.
   */
-void EXTI2_3_IRQHandler(void)
+void EXTI0_1_IRQHandler(void)
 {
-  /* USER CODE BEGIN EXTI2_3_IRQn 0 */
+  /* USER CODE BEGIN EXTI0_1_IRQn 0 */
 
-  /* USER CODE END EXTI2_3_IRQn 0 */
+  /* USER CODE END EXTI0_1_IRQn 0 */
   HAL_GPIO_EXTI_IRQHandler(MODE_SELECT_Pin);
-  /* USER CODE BEGIN EXTI2_3_IRQn 1 */
+  /* USER CODE BEGIN EXTI0_1_IRQn 1 */
 
-  /* USER CODE END EXTI2_3_IRQn 1 */
+  /* USER CODE END EXTI0_1_IRQn 1 */
 }
 
 /**
@@ -167,20 +166,6 @@ void TIM17_IRQHandler(void)
   /* USER CODE BEGIN TIM17_IRQn 1 */
 
   /* USER CODE END TIM17_IRQn 1 */
-}
-
-/**
-  * @brief This function handles USART1 interrupt.
-  */
-void USART1_IRQHandler(void)
-{
-  /* USER CODE BEGIN USART1_IRQn 0 */
-
-  /* USER CODE END USART1_IRQn 0 */
-  HAL_UART_IRQHandler(&huart1);
-  /* USER CODE BEGIN USART1_IRQn 1 */
-
-  /* USER CODE END USART1_IRQn 1 */
 }
 
 /* USER CODE BEGIN 1 */
