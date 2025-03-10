@@ -4,6 +4,8 @@ SIGMA DELTA ADC project
 by Szymon Filipkowski
 
 sigma delta adc code main file
+
+KOD JEST W TRAKCIE PRACY //TODO //TODO //TODO
 **/
 /**
   ******************************************************************************
@@ -74,6 +76,7 @@ uint8_t ANALOG_TO_DIGITAL(uint8_t is_it_first);
 void SEND_VIA_UART(uint8_t toSend);
 void MANUAL_MODE(void);
 void EXIT_DEEP_SLEEP_MODE(void);
+void SEND_VIA_UART(void);
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -329,6 +332,12 @@ uint8_t ANALOG_TO_DIGITAL(uint8_t is_it_first) //conversion from sigma delta har
 
 	return 0; //nothing
 }
+
+void SEND_VIA_UART() //TODO //TODO //TODO
+{
+
+}
+
 
 void MANUAL_MODE()
 {
