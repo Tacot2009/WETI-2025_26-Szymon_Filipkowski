@@ -62,6 +62,8 @@ void Error_Handler(void);
 #define MODE_SELECT_EXTI_IRQn EXTI0_1_IRQn
 #define DIGITAL_INPUT_Pin GPIO_PIN_5
 #define DIGITAL_INPUT_GPIO_Port GPIOA
+#define UASRT2_TX_DISABLED_Pin GPIO_PIN_8
+#define UASRT2_TX_DISABLED_GPIO_Port GPIOA
 
 /* USER CODE BEGIN Private defines */
 

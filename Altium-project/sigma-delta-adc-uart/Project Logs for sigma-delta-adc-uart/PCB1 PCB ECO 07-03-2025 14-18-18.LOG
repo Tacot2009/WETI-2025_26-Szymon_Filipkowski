@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=3.3V Pin=CON1-5
+Added Pin To Net: NetName=UART_TX Pin=CON1-5
+Added Pin To Net: NetName=UART_TX Pin=IC1-13
+Added Net: Name=UART_TX
+Added Room: Name=adc
+Added Room: Name=main
