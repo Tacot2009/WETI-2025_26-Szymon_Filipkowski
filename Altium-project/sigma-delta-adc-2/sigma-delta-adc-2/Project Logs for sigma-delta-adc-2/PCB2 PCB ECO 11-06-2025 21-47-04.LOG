@@ -1,0 +1,5 @@
+Removed Pin From Net: NetName=3.3V Pin=CON2-5
+Change Component Footprint: Designator=CON2 Old Footprint=Goldpin 2.54mm  5Pin New Footprint=Goldpin 2.54 4P
+Change Component Comment : Designator=CON2 Old Comment=5 PIN New Comment=4 PIN
+Added Room: Name=ADC
+Added Room: Name=main
