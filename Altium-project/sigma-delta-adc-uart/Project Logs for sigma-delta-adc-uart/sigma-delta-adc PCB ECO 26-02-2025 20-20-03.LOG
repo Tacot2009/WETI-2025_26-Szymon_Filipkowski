@@ -1,8 +1,0 @@
-Removed Pin From Net: NetName=UART_RX Pin=IC1-6
-Added Pin To Net: NetName=UART_RX Pin=IC1-19
-Added Room: Name=COMPARATOR
-Added Room: Name=DOUBLE OP AMP
-Added Room: Name=I/O DEVICES
-Added Room: Name=INTEGRATER
-Added Room: Name=LOW PASS FILTER
-Added Room: Name=MCU

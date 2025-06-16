@@ -1,0 +1,12 @@
+../Core/Src/main.c:247:13:MX_USART2_UART_Init	8	static,ignoring_inline_asm
+../Core/Src/main.c:176:6:SystemClock_Config	56	static,ignoring_inline_asm
+../Core/Src/main.c:110:5:main	64	static,ignoring_inline_asm
+../Core/Src/main.c:409:6:SEND_VIA_UART	16	static
+../Core/Src/main.c:400:6:CALCULATION_COMPLETED	8	static
+../Core/Src/main.c:375:6:HAL_TIM_PeriodElapsedCallback	24	static
+../Core/Src/main.c:427:6:HAL_UART_TxCpltCallback	16	static
+../Core/Src/main.c:439:6:ENABLE_DEEP_SLEEP	16	static
+../Core/Src/main.c:453:6:EXIT_DEEP_SLEEP	24	static
+../Core/Src/main.c:345:6:HAL_GPIO_EXTI_Rising_Callback	8	static
+../Core/Src/main.c:360:6:HAL_GPIO_EXTI_Falling_Callback	16	static
+../Core/Src/main.c:475:6:Error_Handler	0	static,ignoring_inline_asm

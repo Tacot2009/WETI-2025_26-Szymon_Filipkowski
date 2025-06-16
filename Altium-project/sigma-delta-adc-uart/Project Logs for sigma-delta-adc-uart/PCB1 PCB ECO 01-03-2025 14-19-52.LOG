@@ -1,7 +1,0 @@
-Change Net Name : Old Net Name=A_POS_IN_2 New Net Name=GND
-Change Net Name : Old Net Name=NetCON1_1 New Net Name=UART_TX
-Change Net Name : Old Net Name=NetCON1_2 New Net Name=UART_RX
-Change Net Name : Old Net Name=NetCON2_2 New Net Name=MODE_SELECT
-Change Net Name : Old Net Name=NetCON2_3 New Net Name=ANALOG_IN
-Added Room: Name=adc
-Added Room: Name=main

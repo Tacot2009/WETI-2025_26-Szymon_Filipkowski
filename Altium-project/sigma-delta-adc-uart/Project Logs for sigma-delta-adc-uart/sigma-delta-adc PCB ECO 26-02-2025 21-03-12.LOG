@@ -1,9 +1,0 @@
-Added Pin To Net: NetName=NetIC1_1 Pin=IC1-1
-Added Pin To Net: NetName=NetIC1_1 Pin=IC3-1
-Added Net: Name=NetIC1_1
-Added Room: Name=COMPARATOR
-Added Room: Name=DOUBLE OP AMP
-Added Room: Name=I/O DEVICES
-Added Room: Name=INTEGRATER
-Added Room: Name=LOW PASS FILTER
-Added Room: Name=MCU
