@@ -1,0 +1,19 @@
+Added Component: Designator=IC*(UFQFPN20 - byMe)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.alldatasheet.com/datasheet-pdf/download/1583958/STMICROELECTRONICS/STM32C011F4U6TR.html"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3.3V Pin=IC*-2
+Added Pin To Net: NetName=GND Pin=IC*-3
+Added Pin To Net: NetName=RESET Pin=IC*-4
+Added Pin To Net: NetName=NetIC2_1 Pin=IC*-5
+Added Pin To Net: NetName=UART_RX Pin=IC*-6
+Added Pin To Net: NetName=NetIC*_10 Pin=IC*-10
+Added Pin To Net: NetName=MODE_SEL Pin=IC*-11
+Added Pin To Net: NetName=SWDIO Pin=IC*-16
+Added Pin To Net: NetName=UART_TX Pin=IC*-18
+Added Member To Class: ClassName=MCU Member=Component IC* STM32C011F4U6TR
+Added Room: Name=COMPARATOR
+Added Room: Name=DOUBLE OP AMP
+Added Room: Name=I/O DEVICES
+Added Room: Name=INTEGRATER
+Added Room: Name=LOW PASS FILTER
+Added Room: Name=MCU

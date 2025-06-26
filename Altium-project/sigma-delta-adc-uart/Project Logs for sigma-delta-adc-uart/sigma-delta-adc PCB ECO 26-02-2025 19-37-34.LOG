@@ -1,0 +1,30 @@
+Removed Pin From Net: NetName=3.3V Pin=IC1-2
+Removed Pin From Net: NetName=GND Pin=IC1-3
+Removed Pin From Net: NetName=RESET Pin=IC1-4
+Removed Pin From Net: NetName=NetIC1_5 Pin=IC1-5
+Removed Pin From Net: NetName=UART_RX Pin=IC1-6
+Removed Pin From Net: NetName=NetIC1_10 Pin=IC1-10
+Removed Pin From Net: NetName=MODE_SEL Pin=IC1-11
+Removed Pin From Net: NetName=SWDIO Pin=IC1-16
+Removed Pin From Net: NetName=UART_TX Pin=IC1-18
+Removed Member From Class: ClassName=DOUBLE OP AMP Member=IC3
+Added Component: Designator=IC1(UFQFPN20 - byMe)
+Add component (AddParameter): Name = "ComponentLink1Description"; Value = "Datasheet"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "ComponentLink1URL"; Value = "https://www.alldatasheet.com/datasheet-pdf/download/1583958/STMICROELECTRONICS/STM32C011F4U6TR.html"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=3.3V Pin=IC1-2
+Added Pin To Net: NetName=GND Pin=IC1-3
+Added Pin To Net: NetName=RESET Pin=IC1-4
+Added Pin To Net: NetName=NetIC1_5 Pin=IC1-5
+Added Pin To Net: NetName=UART_RX Pin=IC1-6
+Added Pin To Net: NetName=NetIC1_10 Pin=IC1-10
+Added Pin To Net: NetName=MODE_SEL Pin=IC1-11
+Added Pin To Net: NetName=SWDIO Pin=IC1-16
+Added Pin To Net: NetName=UART_TX Pin=IC1-18
+Added Pin To Net: NetName=SWCLK Pin=IC1-20
+Added Member To Class: ClassName=DOUBLE OP AMP Member=Component IC2 TLV2462CDGKR
+Added Room: Name=COMPARATOR
+Added Room: Name=DOUBLE OP AMP
+Added Room: Name=I/O DEVICES
+Added Room: Name=INTEGRATER
+Added Room: Name=LOW PASS FILTER
+Added Room: Name=MCU

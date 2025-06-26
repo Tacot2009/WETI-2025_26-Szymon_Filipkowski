@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=SWCLK Pin=IC1-20
+Added Pin To Net: NetName=SWCLK Pin=IC1-17
+Added Member To Class: ClassName=MCU Member=Component IC1 STM32C011F4U6TR
+Added Room: Name=COMPARATOR
+Added Room: Name=DOUBLE OP AMP
+Added Room: Name=I/O DEVICES
+Added Room: Name=INTEGRATER
+Added Room: Name=LOW PASS FILTER
+Added Room: Name=MCU

@@ -1,0 +1,11 @@
+Removed Pin From Net: NetName=MODE_SEL Pin=IC1-5
+Added Pin To Net: NetName=MODE_SEL Pin=IC1-7
+Added Pin To Net: NetName=NetIC1_5 Pin=IC1-5
+Added Pin To Net: NetName=NetIC1_5 Pin=R1-1
+Added Net: Name=NetIC1_5
+Added Room: Name=COMPARATOR
+Added Room: Name=DOUBLE OP AMP
+Added Room: Name=I/O DEVICES
+Added Room: Name=INTEGRATER
+Added Room: Name=LOW PASS FILTER
+Added Room: Name=MCU

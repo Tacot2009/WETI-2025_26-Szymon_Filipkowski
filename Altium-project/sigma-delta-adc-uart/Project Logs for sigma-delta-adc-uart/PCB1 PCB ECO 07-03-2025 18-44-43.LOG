@@ -1,0 +1,6 @@
+Change Component Comment : Designator=C3 Old Comment=1uF New Comment=100nF
+Change Component Comment : Designator=C4 Old Comment=1uF New Comment=100nF
+Change Component Comment : Designator=R4 Old Comment=100R New Comment=2k1
+Change Component Comment : Designator=R9 Old Comment=100R New Comment=2k1
+Added Room: Name=adc
+Added Room: Name=main
